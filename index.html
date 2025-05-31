@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuran Player Shqip</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app-container">
+        <header id="app-header">
+            <button id="settings-btn" class="header-icon-btn" title="Cilësimet">
+                <span class="material-icons">settings</span> </button>
+            <h1>KURANI</h1>
+            <div class="search-area">
+                <button id="search-btn" class="header-icon-btn" title="Kërko Sure">
+                     <span class="material-icons">search</span> </button>
+                <input type="text" id="search-input" placeholder="Kërko sure..." class="hidden">
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section id="surah-list-view">
+                <ul id="surah-list">
+                    </ul>
+            </section>
+
+            <section id="player-view" class="hidden">
+                 <button id="back-to-list-btn" class="player-back-btn" title="Mbrapa te Lista e Sureve">
+                     <span class="material-icons">arrow_back</span> Lista
+                 </button>
+
+                 <h2 id="current-surah-title">Emri i Sures</h2>
+
+                 <input type="range" id="progress-slider" value="0" min="0" max="100">
+
+                 <div class="time-display">
+                     <span id="current-time">0:00</span> - <span id="total-time">--:--</span>
+                 </div>
+
+                <div id="player-controls">
+                    <button id="replay-next-btn" class="player-icon-btn" title="Replay ose Sure Tjetër">
+                         <span class="material-icons">replay_circle_filled</span> </button>
+                    <button id="rewind-btn" class="player-icon-btn" title="-10 Sekonda">
+                        <span class="material-icons">replay_10</span> </button>
+                    <button id="play-pause-btn" class="player-main-btn" title="Luaj/Pauzë">
+                        <span class="material-icons">play_arrow</span> </button>
+                     <button id="forward-btn" class="player-icon-btn" title="+10 Sekonda">
+                        <span class="material-icons">forward_10</span> </button>
+                    <button id="show-mini-list-btn" class="player-icon-btn" title="Shfaq Listën e Sureve">
+                         <span class="material-icons">queue_music</span> </button>
+                </div>
+
+            </section>
+
+             <div id="mini-list-modal" class="modal hidden">
+                <div class="modal-content">
+                    <button id="close-mini-list" class="modal-close-btn" title="Mbyll">
+                        <span class="material-icons">close</span> </button>
+                    <h3>Lista e Sureve</h3>
+                    <ul id="mini-surah-list">
+                         </ul>
+                </div>
+            </div>
+
+        </main>
+
+        <div id="mini-player" class="hidden">
+            <span id="mini-player-title">Emri i Sures</span>
+            <button id="mini-play-pause-btn" class="mini-player-btn">
+                <span class="material-icons">play_arrow</span> </button>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
